@@ -35,6 +35,10 @@ function dragDrop() {
     document.getElementById(selectedId).style.display = 'none';
     document.getElementById(dropTargetId).style.display = 'none';
     matchingCounter++;
+  } else if (checkForMatch2(selectedId, dropTargetId)) {
+    document.getElementById(selectedId).style.display = 'none';
+    document.getElementById(dropTargetId).style.display = 'none';
+    matchingCounter++;
   }
 
   if (matchingCounter === 5) {
@@ -60,6 +64,28 @@ function checkForMatch(selected, dropTarget) {
 
     case 'e5':
       return dropTarget === 's5' ? true : false;
+    
+    default:
+      return false;
+  }
+}
+
+function checkForMatch2(selected, dropTarget) {
+  switch (selected) {
+    case 's1':
+      return dropTarget === 'e1' ? true : false;
+    
+    case 's2':
+      return dropTarget === 'e2' ? true : false;
+    
+    case 's3':
+      return dropTarget === 'e3' ? true : false;
+    
+    case 's4':
+      return dropTarget === 'e4' ? true : false;
+
+    case 's5':
+      return dropTarget === 'e5' ? true : false;
     
     default:
       return false;
